@@ -2,8 +2,15 @@ package backend.Printer;
 
 import backend.Prints.Print;
 
-public interface PrinterImpl {
+import java.util.logging.Logger;
 
-    void printing (Print print);
+public class PrinterImpl implements Printer{
+
+
+    @Override
+    public void printing(Print print) {
+
+    }
+    private static Logger logger = Logger.getLogger(backend.Prints.Print.class.getName());
 
 }

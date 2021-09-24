@@ -13,12 +13,17 @@ import java.util.List;
 @Data
 public class Author {
 
+
     @Id
     @GeneratedValue
     private Long id;
 
+    private String name;
+    private String lastName;
+
 
     @OneToMany(mappedBy = "Author")
     private List<Print> prints;
+
 
 }

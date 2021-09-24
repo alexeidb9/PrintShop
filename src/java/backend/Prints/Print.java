@@ -2,29 +2,32 @@ package backend.Prints;
 
 import backend.Authors.Author;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
+@Entity
 @Data
+@NoArgsConstructor
 public abstract class Print {
+
+    @Id
+    @GeneratedValue
+    private Long id;
 
 
     private String dimension;
     private String name;
     private String description;
     private String color;
-    private String paper;
+    private String paperType;
     private double price;
+    private boolean frame;
 
-    //frame
-    //shape
 
-    @Id
-    @GeneratedValue
-    private Long id;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn()
+    private Author author;
 
 
 

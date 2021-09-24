@@ -14,8 +14,8 @@ public class Canvas extends Print {
 
     //8x8, 30x30 (popular)
     private double canvasSize;
-//    private enum canvasType;
-    //glossy canvass, matte type
+//    private enum CanvasType canvasType;
+    //glossy canvas, matte type
 
     @Id
     @GeneratedValue
