@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Comparator;
 
 @Entity
 @Data
@@ -17,6 +18,7 @@ public abstract class Print {
 
 
     private String dimension;
+    private Double weight;
     private String name;
     private String description;
     private String color;
@@ -28,6 +30,10 @@ public abstract class Print {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn()
     private Author author;
+
+    public static final Comparator<Print> BY_WEIGHT = Comparator.comparing(Print::getWeight);
+
+
 
 
 
