@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.alxndr</groupId>
-    <artifactId>recipeproject</artifactId>
+    <artifactId>printshop</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>recipeproject</name>
-    <description>Recipe application</description>
+    <name>printshop</name>
+    <description>PrintShop application</description>
     <properties>
         <java.version>11</java.version>
     </properties>
@@ -68,5 +68,14 @@
         </dependency>
 
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

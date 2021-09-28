@@ -1,5 +1,4 @@
 package backend.Shop.domain.controller;
 
-public class OrderController
-{
+public class SomeClass {
 }

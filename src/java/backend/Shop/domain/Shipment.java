@@ -2,49 +2,55 @@ package backend.Shop.domain;
 
 import backend.Prints.Print;
 
-import java.io.IOException;
-import java.util.*;
-import java.util.function.Consumer;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
-public class Shipment implements Iterable<Print> {
-
+public class Shipment implements Iterable<Print>
+{
     private static final int LIGHT_VAN_MAX_WEIGHT = 20;
-    private static final int PRINT_NOT_PRESENT = -1;
+    public static final int PRODUCT_NOT_PRESENT = -1;
 
-    private final List<Print> prints = new ArrayList<>();
+    private final List<Print> products = new ArrayList<>();
 
-    private List<Print> lightVanPrints;
-    private List<Print> heavyVanPrints;
+    private List<Print> lightVanProducts;
+    private List<Print> heavyVanProducts;
 
-    public void add(Print print) throws IOException {
-//        throw new IOException("something bad happen");
-        prints.add(print);
+    public void add(Print product)
+    {
+        products.add(product);
     }
 
-    public void replace(Print oldPrint, Print newPrint) {
-        final int index = prints.indexOf(oldPrint);
-        if (index != PRINT_NOT_PRESENT) {
-            prints.set(index, newPrint);
+    public void replace(Print oldPrint, Print newPrint)
+    {
+        final int index = products.indexOf(oldPrint);
+        if (index != PRODUCT_NOT_PRESENT)
+        {
+            products.set(index, newPrint);
         }
     }
 
-    public void prepare() {
-        // sort our list of prints by weight
-        //  Collections.sort(prints, Print.BY_WEIGHT); - in case of Java 7
-        prints.sort(Print.BY_WEIGHT);
+    public void prepare()
+    {
+        // sort our list of products by weight
+        //Collections.sort(products, Product.BY_WEIGHT);
+        products.sort(Print.BY_WEIGHT);
 
-        // find the print that needs a heavy van
+        // find the product index that needs the heavy van
         int splitPoint = findSplitPoint();
 
-        // assign view of the print lists for hevy and light vans
-        lightVanPrints = prints.subList(0, splitPoint);
-        heavyVanPrints = prints.subList(splitPoint, prints.size());
+        // assign views of the product list for heavy and light vans
+        lightVanProducts = products.subList(0, splitPoint);
+        heavyVanProducts = products.subList(splitPoint, products.size());
     }
 
-    private int findSplitPoint() {
-        for (int i = 0; i < prints.size(); i++) {
-            final Print print = prints.get(i);
-            if (prints.getWeight() > LIGHT_VAN_MAX_WEIGHT) {
+    private int findSplitPoint()
+    {
+        for (int i = 0; i < products.size(); i++)
+        {
+            final Print product = products.get(i);
+            if (product.getWeight() > LIGHT_VAN_MAX_WEIGHT)
+            {
                 return i;
             }
         }
@@ -52,26 +58,18 @@ public class Shipment implements Iterable<Print> {
         return 0;
     }
 
-    public List<Print> getLightVanPrints() {
-        return lightVanPrints
+    public List<Print> getHeavyVanProducts()
+    {
+        return heavyVanProducts;
     }
 
-    public List<Print> getHeavyVanPrints() {
-        return heavyVanPrints
+    public List<Print> getLightVanProducts()
+    {
+        return lightVanProducts;
     }
 
-
-    @Override
-    public Iterator<Print> iterator() {
-        return prints.iterator();
-    }
-
-    @Override
-    public void forEach(Consumer<? super Print> action) {
-    }
-
-    @Override
-    public Spliterator<Print> spliterator() {
-        return null;
+    public Iterator<Print> iterator()
+    {
+        return products.iterator();
     }
 }

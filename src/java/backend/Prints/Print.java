@@ -12,13 +12,22 @@ import java.util.Comparator;
 @NoArgsConstructor
 public abstract class Print {
 
+    public static final Comparator<Print> BY_WEIGHT
+            = new Comparator<Print>()
+    {
+        public int compare(final Print p1, final Print p2)
+        {
+            return Integer.compare(p1.getWeight(), p2.getWeight());
+        }
+    };
+
     @Id
     @GeneratedValue
     private Long id;
 
 
     private String dimension;
-    private Double weight;
+    private int weight;
     private String name;
     private String description;
     private String color;
@@ -30,10 +39,6 @@ public abstract class Print {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn()
     private Author author;
-
-    public static final Comparator<Print> BY_WEIGHT = Comparator.comparing(Print::getWeight);
-
-
 
 
 
