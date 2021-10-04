@@ -12,6 +12,8 @@ import java.util.Comparator;
 @NoArgsConstructor
 public abstract class Print {
 
+    // Is it the right placement of Comparator?
+
     public static final Comparator<Print> BY_WEIGHT
             = new Comparator<Print>()
     {
@@ -28,11 +30,9 @@ public abstract class Print {
 
     private String dimension;
     private int weight;
-    private String name;
-    private String description;
-    private String color;
+    private String tittle;
     private String paperType;
-    private double price;
+    private double priceTag;
     private boolean frame;
 
 

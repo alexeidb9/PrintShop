@@ -1,6 +1,7 @@
 package backend.Authors;
 
 import backend.Prints.Print;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,20 +17,19 @@ import java.util.List;
 @NoArgsConstructor
 public class Author {
 
-    @Id
-    @GeneratedValue
-    private Long id;
-
     private String name;
     private String lastName;
 
 
-    @OneToMany(mappedBy = "Author")
+    @Id
+    @GeneratedValue
+    private Long id;
+
+
+    @OneToMany(mappedBy = "author")
+    @JsonIgnore
+    // Isn't HashMap better in that case?
     private List<Print> prints;
 
 
-    public Author(String name, String lastName) {
-        this.name = name;
-        this.lastName = lastName;
-    }
 }
