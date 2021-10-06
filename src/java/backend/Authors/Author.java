@@ -12,10 +12,13 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import java.util.List;
 
-@Entity(name = "Author")
+@Entity(name = "Authors")
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class Author {
+
+    // TODO set up database manually
 
     private String name;
     private String lastName;
@@ -30,6 +33,7 @@ public class Author {
     @JsonIgnore
     // Isn't HashMap better in that case?
     private List<Print> prints;
+
 
 
 }

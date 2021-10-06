@@ -37,7 +37,6 @@ public abstract class Print {
 
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn()
     private Author author;
 
 

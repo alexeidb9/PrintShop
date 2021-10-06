@@ -18,7 +18,7 @@ public class Canvas extends Print {
     private CanvasType canvasType;
 
     //TODO
-//    Switch statement for canvas type
+    //    Switch statement for canvas type
 
 
 
