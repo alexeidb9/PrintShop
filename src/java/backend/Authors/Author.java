@@ -1,39 +1,29 @@
 package backend.Authors;
 
+import backend.BaseModel;
 import backend.Prints.Print;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import java.util.List;
 
-@Entity(name = "Authors")
+@Entity
+@Table(name = "AUTHORS")
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
-public class Author {
+public class Author extends BaseModel {
 
-    // TODO set up database manually
-
+    @Column
     private String name;
     private String lastName;
 
-
-    @Id
-    @GeneratedValue
-    private Long id;
-
-
     @OneToMany(mappedBy = "author")
     @JsonIgnore
-    // Isn't HashMap better in that case?
     private List<Print> prints;
-
-
 
 }

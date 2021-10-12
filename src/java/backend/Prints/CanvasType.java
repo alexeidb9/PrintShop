@@ -1,6 +1,5 @@
 package backend.Prints;
 
-
 public enum CanvasType {
 
     GLOSSY, MATTE;

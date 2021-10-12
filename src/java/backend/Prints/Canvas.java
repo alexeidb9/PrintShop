@@ -2,14 +2,14 @@ package backend.Prints;
 
 import backend.Authors.Author;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-@Entity
+@Entity(name = "canvases")
 @Data
+@NoArgsConstructor
 public class Canvas extends Print {
 
     //8x8, 30x30 (popular)
@@ -19,12 +19,10 @@ public class Canvas extends Print {
 
     //TODO
     //    Switch statement for canvas type
-
-
-
-    @Id
-    @GeneratedValue
-    private Long id;
+//
+//    switch(enum type) {
+//        case
+//    }
 
 
     @ManyToOne

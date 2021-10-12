@@ -1,16 +1,17 @@
 package backend.Prints;
 
 import backend.Authors.Author;
+import backend.BaseModel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Comparator;
 
-@Entity
+@Entity(name = "prints")
 @Data
 @NoArgsConstructor
-public abstract class Print {
+public class Print extends BaseModel {
 
     // Is it the right placement of Comparator?
 
@@ -23,14 +24,10 @@ public abstract class Print {
         }
     };
 
-    @Id
-    @GeneratedValue
-    private Long id;
-
 
     private String dimension;
     private int weight;
-    private String tittle;
+    private String title;
     private String paperType;
     private double priceTag;
     private boolean frame;

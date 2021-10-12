@@ -1,20 +1,16 @@
-package backend.Shop.domain;
+package backend.Shop;
+
+import backend.BaseModel;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 
 @Entity
-public class Order {
+public class Order extends BaseModel {
 
     private String tittle;
     private Double date;
     private Double price;
     private String customersName;
-
-    @Id
-    @GeneratedValue
-    private Long id;
 
     //TODO
     // Отношение к базе клиентов.

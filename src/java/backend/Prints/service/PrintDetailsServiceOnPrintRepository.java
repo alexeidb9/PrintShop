@@ -1,22 +1,23 @@
 package backend.Prints.service;
 
-import com.alxndr.printshop.backend.models.Prints.model.Print;
-import com.alxndr.printshop.backend.models.Prints.repository.PrintsRepository;
+import backend.Prints.repository.PrintController;
 import backend.Prints.service.models.AddPrint;
 import backend.Prints.service.models.GetPrint;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.awt.*;
 import java.util.List;
 
+@Service
 public class PrintDetailsServiceOnPrintRepository implements PrintService {
 
-    PrintsRepository printsRepository;
+    PrintController printController;
 //    Log log;
 
     @Autowired
-    public PrintDetailsServiceOnPrintRepository(PrintsRepository printsRepository) {
-        this.printsRepository = printsRepository;
+    public PrintDetailsServiceOnPrintRepository(PrintController printsRepository) {
+        this.printController = printController;
     }
 
 

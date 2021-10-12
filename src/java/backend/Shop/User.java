@@ -1,4 +1,4 @@
-package backend.Shop.domain;
+package backend.Shop;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
