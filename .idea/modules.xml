@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/PrintShop.iml" filepath="$PROJECT_DIR$/PrintShop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PrintShopEntities/PrintShopEntities.iml" filepath="$PROJECT_DIR$/PrintShopEntities/PrintShopEntities.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PrintShopPrints/PrintShopPrints.iml" filepath="$PROJECT_DIR$/PrintShopPrints/PrintShopPrints.iml" />
     </modules>
   </component>
 </project>
