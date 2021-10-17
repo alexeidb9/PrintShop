@@ -1,0 +1,7 @@
+1. Create all the entities and try to load them into database (H2/MySQL)
+ 1.1 Enum types of prints.
+2. Try to create different operations on them.
+    2.1 Send print, add to the cart.
+    2.2 CRUD
+    2.3 Display an image on a page
+

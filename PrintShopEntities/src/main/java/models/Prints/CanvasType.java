@@ -1,15 +1,11 @@
-package backend.Prints;
-
+package models.Prints;
 
 public enum CanvasType {
 
-    GLOSSY,
-    MATTE;
+    GLOSSY, MATTE;
 
-    CanvasType() {
-    }
 
-    //    switch(boolean choice) {
+//    switch(boolean choice) {
 //
 //    }
 
@@ -23,6 +19,7 @@ public enum CanvasType {
 //                .findFirst();
 //
 //}
+
 
 
 }
