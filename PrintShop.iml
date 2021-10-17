@@ -16,8 +16,8 @@
           <root url="file://$MODULE_DIR$/web" relative="/" />
         </webroots>
         <sourceRoots>
+          <root url="file://$MODULE_DIR$/PrintShopEntities/resources" />
           <root url="file://$MODULE_DIR$/src/java" />
-          <root url="file://$MODULE_DIR$/src/resources" />
         </sourceRoots>
       </configuration>
     </facet>
@@ -43,7 +43,7 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/PrintShopEntities/resources" type="java-resource" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
